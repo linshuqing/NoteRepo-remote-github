@@ -1,9 +1,9 @@
-> preprint 2024.4 港科大、Microsoft
+> preprint 2024.4、ACM MM 2024，港科大、Microsoft
 <!-- 翻译 & 理解 -->
 <!-- Recent progress in large-scale zero-shot speech synthesis has been significantly advanced by language models and diffusion models. However, the generation process of both methods is slow and computationally intensive. Efficient speech synthesis using a lower computing budget to achieve quality on par with previous work remains a significant challenge. In this paper, we present FlashSpeech, a large-scale zero-shot speech synthesis system with approximately 5% of the in- ference time compared with previous work. FlashSpeech is built on the latent consistency model and applies a novel adversarial consistency training approach that can train from scratch without the need for a pre-trained diffusion model as the teacher. Furthermore, a new prosody generator module enhances the diversity of prosody, making the rhythm of the speech sound more natural. The generation processes of FlashSpeech can be achieved efficiently with one or two sampling steps while maintaining high audio quality and high similarity to the audio prompt for zero-shot speech generation. Our experimental results demonstrate the supe- rior performance of FlashSpeech. Notably, FlashSpeech can be about 20 times faster than other zero-shot speech synthesis systems while maintaining comparable performance in terms of voice quality and similarity. Furthermore, FlashSpeech demonstrates its versatility by efficiently performing tasks like voice conversion, speech editing, and diverse speech sampling. Audio samples can be found in https://flashspeech.github.io/. -->
 1. 提出 FlashSpeech，大规模 zero-shot 语音合成，相比于之前的工作，只要 5% 的推理时间
 2. FlashSpeech 基于 latent consistency model，采用新的对抗一致性训练方法，无需预训练的 diffusion 模型作为 teacher
-3. 新的 prosody generator 模块可以提升韵律多样性
+3. 提出新的 prosody generator 模块，提升韵律多样性
 4. 可以在一两个采样步内高效生成语音，同时保持高音质和高相似性
 
 ## Introduction
