@@ -1,4 +1,6 @@
-> 本文主要介绍经典 TTS 模型中的文本前端，以 tacotron、Glow-TTS 和 VITS 为例，详细描述了文本前端的处理过程。
+> 本文主要介绍经典神经 TTS 模型中的文本前端，以 tacotron、Glow-TTS 和 VITS 为例，详细描述了文本前端的处理过程。
+
+## 简介
 
 介绍之前首先需要了解两个概念，phoneme（音素）和 grapheme（字素）：
 + phoneme（音素）：指最小的发音单元，为语音的最小单位
@@ -279,12 +281,17 @@ symbols = ['_', ';', ':', ',', '.', '!', '?', '¡', '¿', '—', '…', '"', '«
 
 ## 常见的文本前端和音素提取库
 
-常用的文本前端库：
-1. [nltk](https://github.com/nltk/nltk)
-2. 
+python 中常用的文本前端库：
+1. [nltk](https://github.com/nltk/nltk) 为 python 的自然语言处理库，提供了大量的文本处理工具，包括分词、词性标注、命名实体识别、语法分析、情感分析等。
+2. [jieba](https://github.com/fxsjy/jieba) 是优秀的中文分词第三方库，使用方便，功能强大。
+3. [PaddleSpeech-zh_normalization](https://github.com/PaddlePaddle/PaddleSpeech/tree/develop/paddlespeech/t2s/frontend/zh_normalization) 为 PaddleSpeech 中的中文文本正则化模块（同时 PaddleSpeech 也内置了中文的 G2P 模块，具体信息见[链接](https://github.com/PaddlePaddle/PaddleSpeech/blob/develop/docs/source/tts/zh_text_frontend.md)）。
 
-常用的音素提取库：
+python 中常用的音素提取库：
 1. [phonemizer](https://github.com/bootphon/phonemizer) 是一个用于将文本转换为音素表示的 Python 库，支持多种语言和多个音标系统。
 2. [espeak-ng](https://github.com/espeak-ng/espeak-ng) 是一个基于开源文本转语音引擎 espeak 的 Python 包，支持多种语言的发音转换。支持 ARPAbet 和 IPA 等音标系统。
 3. [python-pinyin](https://github.com/mozillazg/python-pinyin) 用于将汉字转为拼音。可以用于汉字注音、排序、检索。
+4. [g2p_en](https://github.com/Kyubyong/g2p) 将英文的 grapheme 转为 phoneme。
+5. [g2pW](https://github.com/GitYCC/g2pW) 为中文的 grapheme 转 phoneme 模块。
 4. [Merlin](https://github.com/CSTR-Edinburgh/merlin) 提供了 TTS 核心的声学建模模块（声学和语音特征归一化，神经网络声学模型训练和生成）。
+
+> 上述提及的模块可能存在互相依赖或者包含关系。

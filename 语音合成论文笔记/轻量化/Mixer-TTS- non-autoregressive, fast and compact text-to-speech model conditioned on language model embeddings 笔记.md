@@ -5,7 +5,7 @@
 
 ## Introduction
 
-1. 提出 Mixer-TTS，基于 MLP-Mixer 结构，基本模型和 FastPitch 类似，拓展版采用预训练的 LM 来韵律和发音质量
+1. 提出 Mixer-TTS，基于 MLP-Mixer 结构，基本模型和 FastPitch 类似，拓展版采用预训练的 LM 来引入韵律，提高发音质量
 2. 接上 HiFi-GAN 后，在 LJSpeech 上的 MOS 为 4.05（GT 为4.27）
 3. 基本版 19.2M 参数，拓展版 24M 参数
 

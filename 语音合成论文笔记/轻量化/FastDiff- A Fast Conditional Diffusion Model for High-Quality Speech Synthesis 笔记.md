@@ -1,17 +1,17 @@
 > IJCAI 2022，浙江大学，腾讯 AI Lab，Dong Yu，Zhou Zhao
 
 1. DDPM 的迭代采用非常耗时
-2. 提出 FasrDiff，通过堆叠不同 receptive field patterns 的 time-aware location-variable 卷积层来自适应地建模长期依赖，同时采用 noise schedule predictor 来减少采样步数而不牺牲质量
-3. 基于 FastDiff 提出 FastDiff-TTS，可以得到 sota 的生成效果，在 v100 gpu 上比 real time 快 58 倍
+2. 提出 FastDiff，通过堆叠不同 receptive field patterns 的 time-aware location-variable 卷积层来自适应地建模长期依赖，同时采用 noise schedule predictor 来减少采样步数而不牺牲质量
+3. 基于 FastDiff 提出 FastDiff-TTS，可以得到 SOTA 的生成效果，在 V100 GPU 上比 real time 快 58 倍
 
 ## Introduction
 
-1. 语音生成的两个目标：高质量+快速
-2. DDPM + 语音合成当前有两个挑战：
+4. 语音生成的两个目标：高质量+快速
+5. DDPM + 语音合成当前有两个挑战：
 	1. DDPM 其本质由于是迭代降噪，而不管生成效果和最参考语音的差异，可能降噪过度导致语音中的一些呼吸声被去掉，反而影响真实度
 	2. 降噪过程需要好多迭代步，如果减少步数效果又不好
-3. 本文提出 FastDiff，通过堆叠不同 receptive field patterns 的 time-aware location-variable 卷积层来自适应地建模长期依赖，同时采用 noise schedule predictor 来减少采样步数进行推理加速而不牺牲质量
-4. 最终 MOS 值更高，只要四次迭代就可以实现高质量合成
+6. 本文提出 FastDiff，通过堆叠不同 receptive field patterns 的 time-aware location-variable 卷积层来自适应地建模长期依赖，同时采用 noise schedule predictor 来减少采样步数进行推理加速而不牺牲质量
+7. 最终 MOS 值更高，只要四次迭代就可以实现高质量合成
 
 ## 背景 - DDPM（略）
 
