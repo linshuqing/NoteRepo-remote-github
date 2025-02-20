@@ -1,4 +1,4 @@
-> ICASSP 2023，University of the Philippines（菲律宾大学），一个作者
+FastDiff> ICASSP 2023，University of the Philippines（菲律宾大学），一个作者
 
 1. 提出 EfficientSpeech，可以实时地在 ARM CPU 上合成波形，采用浅层的、非自回归的、金字塔结构的 Transformer，形成一个 U-Net
 2. 266k 参数，相比于 FastSpeech 2 只有轻微的性能下降
