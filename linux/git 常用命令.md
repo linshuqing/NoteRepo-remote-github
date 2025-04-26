@@ -81,6 +81,7 @@ git branch
 > 查看所有远程分支：`git branch -r`
 > 查看本地和远程所有分支：`git branch -a`
 > 删除分支：`git branch -d <分支名>`，删除本地分支
+> 创建分支：`git branch <分支名>`，创建本地分支
 
 
 切换分支：
@@ -89,6 +90,17 @@ git checkout <分支名>
 ```
 > `git checkout -b <新的分支名>`：创建并切换到新的分支
 > `git checkout -b <新的分支名> <commit>`：在指定的提交基础上创建并切换到新的分支。
+
+暂存但是不 add 工作流程：
+```bash
+1. 暂存当前工作 git stash save "<描述信息>"
+2. 切换到其他分支 git checkout <其他分支名>
+3. 完成其他分支的工作，切换回原来的分支 git checkout <原来的分支名>
+4. 恢复暂存的工作 git stash pop
+```
+> `git stash list` 查看所有的 stash
+> `git stash apply <stash@{n}>` 恢复指定的 stash，不指定后面的 `<stash@{n}>`，默认恢复最近的 stash
+> `git stash drop <stash@{n}>` 删除指定的 stash
 
 
 取消文件的追踪：
