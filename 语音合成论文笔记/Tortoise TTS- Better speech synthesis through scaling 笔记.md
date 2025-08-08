@@ -1,6 +1,6 @@
 > arxiv 2023 未发表，OpenAI 研究员 James Betker
 
-1. 本文将图像生成的 autoregressive transformers 和 DDPMs 方法用到语音合成，提出了 TorToise，支持多音色
+1. 提出 TorToise，将图像生成的 autoregressive transformers 和 DDPMs 方法用到语音合成，支持多音色
 2. 完全开源：https://github.com/neonbjb/tortoise-tts
 
 > 过程完全参考 DALL-E，采用 LM 得到 codes，然后用 diffusion 从 codes 得到 mel 谱，然后用 vocoder 合成音频。引入 CLVP 进行 re-ranking。
@@ -17,7 +17,7 @@
 
 两种模型都能通过更多的计算和数据提高性能。
 
-这说明，结合这两种方法在生成连续数据（如语音频谱图或图像）时可能效果更好。
+这说明，结合这两种方法在生成连续数据（如语谱图或图像）时可能效果更好。
 
 推理阶段，自回归模型将文本 token 序列转换为 speech token 序列，然后 DDPM 将这些 token 解码为语音。
 
@@ -42,7 +42,7 @@ TorToise 使用 speech conditioning 输入到自回归模型和 DDPM。speech co
 
 ### CLVP
 
-CLIP 用于对生成模型的输出进行排序，选择最好的。同样的方法可以应用到语音：大多数 TTS 数据集都是音频片段和文本的配对。TorToise 中，训练 CLVP，用于对 AR model 的输出进行 re-ranking。
+图像中的 CLIP 用于对生成模型的输出进行排序，选择最好的。同样的方法可以应用到语音：大多数 TTS 数据集都是音频片段和文本的配对。TorToise 中，训练 CLVP，用于对 AR model 的输出进行 re-ranking。
 
 ## 训练
 
@@ -67,7 +67,7 @@ TorToise TTS 的 DDPM 采样参数如下：
 ## 数据集
 
 使用 LibriTTS 和 HiFiTTS 数据集，共 896 小时的 transcribed speech。另外从
-互联网上爬取了 49,000 小时的 speech audio，构建了一个“extended”数据集。验证集使用 LibriTTS 测试集。
+互联网上爬取 49,000 小时的 speech audio 构建拓展数据集。验证集使用 LibriTTS 测试集。
 
 ## 实验
 
